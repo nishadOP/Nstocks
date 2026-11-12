@@ -16,7 +16,7 @@ function Login() {
     setError("");
 
     try {
-      await axios.post("http://localhost:3002/login", form, {
+      await axios.post("https://nstocks.onrender.com/login", form, {
         withCredentials: true,
       });
       window.location.href = "http://localhost:3001";

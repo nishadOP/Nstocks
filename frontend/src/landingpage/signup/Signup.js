@@ -16,7 +16,7 @@ function Signup() {
     setError("");
 
     try {
-      await axios.post("http://localhost:3002/signup", form, {
+      await axios.post("https://nstocks.onrender.com/signup", form, {
         withCredentials: true,
       });
       // after signup, go to the dashboard
