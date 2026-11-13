@@ -10,9 +10,16 @@ const sendToken = (res, user, status) => {
     expiresIn: "3d",
   });
 
-  res.cookie("token", token, {
+  // res.cookie("token", token, {
+  //   httpOnly: true,
+  //   sameSite: "lax",
+  //   maxAge: 3 * 24 * 60 * 60 * 1000,
+  // });
+
+    res.cookie("token", token, {
     httpOnly: true,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
     maxAge: 3 * 24 * 60 * 60 * 1000,
   });
 
@@ -75,11 +82,24 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// // LOGOUT
+// router.post("/logout", (req, res) => {
+//   res.clearCookie("token");
+//   res.json({ success: true });
+// });
+
+
 // LOGOUT
 router.post("/logout", (req, res) => {
-  res.clearCookie("token");
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
   res.json({ success: true });
 });
+
+
 
 // WHO AM I (only works if logged in)
 router.get("/me", protect, (req, res) => {

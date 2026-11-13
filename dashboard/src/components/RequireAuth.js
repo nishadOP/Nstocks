@@ -9,11 +9,11 @@ function RequireAuth({ children }) {
         if (res.ok) {
           setChecking(false);
         } else {
-          window.location.href = "http://localhost:3000/login";
+          window.location.href = "https://main.d2q3r8eseqlsvu.amplifyapp.com/login";
         }
       })
       .catch(() => {
-        window.location.href = "http://localhost:3000/login";
+        window.location.href = "https://main.d2q3r8eseqlsvu.amplifyapp.com/login";
       });
   }, []);
 

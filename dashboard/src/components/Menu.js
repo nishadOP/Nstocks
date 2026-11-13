@@ -16,7 +16,7 @@ const handlelogout = async () => {
     method: "POST",
     credentials: "include",
   });
-  window.location.href = "http://localhost:3000/login";
+  window.location.href = "https://main.d2q3r8eseqlsvu.amplifyapp.com/login";
 };
 
 //handleclick for selectedmenu

@@ -20,7 +20,7 @@ function Signup() {
         withCredentials: true,
       });
       // after signup, go to the dashboard
-      window.location.href = "http://localhost:3001";
+      window.location.href = "https://main.d1gnotjl6qrlsb.amplifyapp.com";
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong");
     }

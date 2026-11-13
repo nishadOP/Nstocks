@@ -21,16 +21,34 @@ const url = process.env.MONGO_URL;
 
 const app = express();
 
+// app.use(
+//   cors({
+//     origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:5173"],
+//     credentials: true,
+//   })
+// );
+// app.use(cookieParser());
+// app.use(bodyparser.json());
+// app.use("/", authRoute);
+
+
+app.set("trust proxy", 1);
+
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:5173"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "http://localhost:5173",
+      "https://main.d2q3r8eseqlsvu.amplifyapp.com",
+      "https://main.d1gnotjl6qrlsb.amplifyapp.com",
+    ],
     credentials: true,
   })
 );
 app.use(cookieParser());
 app.use(bodyparser.json());
 app.use("/", authRoute);
-
 
 
 mongoose.connect(url);
