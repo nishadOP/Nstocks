@@ -12,7 +12,7 @@ const [isprofiledropdown, setisprofiledropdown] = useState(false);
 const user = useUser();
 
 const handlelogout = async () => {
-  await fetch("http://localhost:3002/logout", {
+  await fetch("https://nstocks.onrender.com/logout", {
     method: "POST",
     credentials: "include",
   });

@@ -9,7 +9,7 @@ const  [ allpositions,setallpositions] = useState([]);
 
 useEffect(()=>{
 
-axios.get("http://localhost:3002/allpositions").then((res)=>{
+axios.get("https://nstocks.onrender.com/allpositions").then((res)=>{
   console.log(res.data);
   setallpositions(res.data)
 })

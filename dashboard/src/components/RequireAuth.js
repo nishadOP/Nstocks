@@ -4,7 +4,7 @@ function RequireAuth({ children }) {
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3002/me", { credentials: "include" })
+    fetch("https://nstocks.onrender.com/me", { credentials: "include" })
       .then((res) => {
         if (res.ok) {
           setChecking(false);

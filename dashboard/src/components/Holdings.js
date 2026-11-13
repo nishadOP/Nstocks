@@ -12,7 +12,7 @@ const  [ allholdings,setallholdings] = useState([]);
 
 useEffect(()=>{
 
-axios.get("http://localhost:3002/allholdings").then((res)=>{
+axios.get("https://nstocks.onrender.com/allholdings").then((res)=>{
   console.log(res.data);
   setallholdings(res.data)
 })
